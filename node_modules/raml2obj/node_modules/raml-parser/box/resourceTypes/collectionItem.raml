@@ -1,0 +1,15 @@
+type: standardResponse
+get:
+  responses:
+    200:
+      body:
+        schema: <<resourcePathName | !singularize>>
+        example: <<itemResponseExample>>
+put:
+  body:
+    schema: <<resourcePathName | !singularize>>Update
+  responses:
+    200:
+      body:
+        schema: <<resourcePathName | !singularize>>
+        example: <<itemResponseExample>>
