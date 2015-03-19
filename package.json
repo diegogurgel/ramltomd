@@ -2,16 +2,24 @@
   "name": "raml-converter",
   "version": "0.0.1",
   "description": "raml to markdown",
-  "main": "index.js",
+  "main": "lib/converter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Diego Gurgel",
   "license": "ISC",
   "dependencies": {
-    "nunjucks": "^1.2.0"
-  },
-  "devDependencies": {
+    "nunjucks": "^1.2.0",
     "raml2obj": "^2.0.0"
-  }
+  },
+  "main":"lib/converter.js",
+  "bin": {
+    "ramltomd": "lib/converter.js"
+  },
+"repository": {
+  "type": "git",
+  "url": ""
+},
+"readmeFilename": "readme.md",
+  "devDependencies": {}
 }
