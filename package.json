@@ -10,16 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "nunjucks": "^1.2.0",
-    "raml2obj": "^2.0.0"
+    "raml2obj": "^2.0.0",
+    "commander": "^2.7.1"
   },
-  "main":"lib/converter.js",
   "bin": {
     "ramltomd": "lib/converter.js"
   },
-"repository": {
-  "type": "git",
-  "url": ""
-},
-"readmeFilename": "readme.md",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "readmeFilename": "readme.md",
   "devDependencies": {}
 }

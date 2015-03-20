@@ -8,21 +8,22 @@
 
 {% for method in resources[0].methods %}
 #### {{ method.method }}: {{method.description}}
-
-```javascript 
-{{method.body['application/json'].schema}}
+{% for bodyKey,value in method.body%}
+Request type:{{bodyKey}}
+``` 
+{{method.body[bodyKey].schema}}
 ```
-
+{% endfor %}
 ##### Respostas
 
 {% for httpCode,value in method.responses %}
 {{httpCode}}
-	{% for bodyKey,value in method.responses[httpCode].body%}
-	Type:{{bodyKey}}
-	```javascript 
-		{{method.responses[httpCode].body[bodyKey].schema}}
-	``` 
-	{% endfor %}
+{% for bodyKey,value in method.responses[httpCode].body%}
+Response type:{{bodyKey}}
+``` 
+{{method.responses[httpCode].body[bodyKey].schema}}
+``` 
+{% endfor %}
 {% endfor %}
 {% endfor %}
 {% endfor %}

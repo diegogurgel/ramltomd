@@ -1,90 +1,39 @@
 #%RAML 0.8
  
-title: mail-relatorio
-baseUri: http://mgsrvnode01/mail-relatorio{version}
-version: ""
-
-/enviar:
+title: World Music API
+baseUri: http://example.api.com/{version}
+version: v1
+# traits:
+#   - paged:
+#       queryParameters:
+#         pages:
+#           description: The number of pages to return
+#           type: number
+#   - secured: !include http://raml-example.com/secured.yml
+/songs:
+  #is: [ paged, secured ]
+  get:
+    queryParameters:
+      genre:
+        description: filter the songs by genre
   post:
-    description: Enviar um email com o relatorio do diagnostico
-    body:
-        application/json:
-            schema: |
-                {
-                  "data": "19/01/2014",
-                  "nome": "Jansen Felipe",
-                  "email": "jansen.vitor@sebraemg.com.br",
-                  "financas": {
-                    "percentual": "12%",
-                    "necessidade": "Recrutamento e Seleção",
-                    "material": {
-                        "descricao": "Manual - Como elaborar controle financeiro",
-                        "link": "http://"
-                    },
-                    "ferramenta": {
-                        "descricao": "Recrutamento e Seleção",
-                        "link": "http://"
-                    }
+  /{songId}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              schema: |
+                { "$schema": "http://json-schema.org/schema",
+                  "type": "object",
+                  "description": "A canonical song",
+                  "properties": {
+                    "title":  { "type": "string" },
+                    "artist": { "type": "string" }
                   },
-                  "mercado": {
-                    "percentual": "13%",
-                    "necessidade": "Remuneração",
-                    "material": {
-                        "descricao": "Manual - Como elaborar um Plano de Marketing",
-                        "link": "http://"
-                    },
-                    "ferramenta": {
-                        "descricao": "Plano de Treinamento Empresarial",
-                        "link": "http://"
-                    }
-                  },
-                  "pessoas": {
-                    "percentual": "14%",
-                    "necessidade": "Captar emprestimos e/ou financiamentos",
-                    "material": {
-                        "descricao": "Cartilha - Começou o ano. E Agora! ",
-                        "link": "http://"
-                    },
-                    "ferramenta": {
-                        "descricao": "Informações Trabalhistas",
-                        "link": "http://"
-                    }
-                  },
-                  "servicos_financeiros": {
-                    "percentual": "15%",
-                    "necessidade": "Inovação",
-                    "material": {
-                        "descricao": "Manual - Como elaborar Plano de Negócio ",
-                        "link": "http://"
-                    },
-                    "ferramenta": {
-                        "descricao": "Matriz de fidelização ",
-                        "link": "http://"
-                    }
-                  },
-                  "inovacao": {
-                    "percentual": "16%",
-                    "necessidade": "Sustentabilidade",
-                    "material": {
-                        "descricao": "Manual - Como elaborar Plano de Negócio ",
-                        "link": "http://"
-                    },
-                    "ferramenta": {
-                        "descricao": "Matriz de análise da concorrência",
-                        "link": "http://"
-                    }
-                  }
+                  "required": [ "title", "artist" ]
                 }
-
-    responses:
-      200:
-        body:
-          application/json:
-            schema: |
-              { 
-                "code":0,
-                "message":"Email enviado com sucesso!"
-              }
-      400:
-        body:
-          application/json:
+            application/xml:
+    delete:
+      description: |
+        This method will *delete* an **individual song**
