@@ -1,6 +1,6 @@
 {
   "name": "ramltomd",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "raml to markdown",
   "main": "lib/ramltomd.js",
   "scripts": {

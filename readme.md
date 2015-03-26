@@ -13,8 +13,7 @@
 
 
 ###Sample
-```bash
 
-$ ramltomd -i path/to/filename.raml > path/to/output.md
-
+```sh
+$ramltomd -i path/to/filename.raml > path/to/output.md
 ```
