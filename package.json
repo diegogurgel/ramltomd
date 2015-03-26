@@ -1,8 +1,8 @@
 {
   "name": "ramltomd",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "raml to markdown",
-  "main": "lib/converter.js",
+  "main": "lib/ramltomd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,7 @@
     "commander": "^2.7.1"
   },
   "bin": {
-    "ramltomd": "lib/converter.js"
+    "ramltomd": "lib/ramltomd.js"
   },
   "repository": {
     "type": "git",
