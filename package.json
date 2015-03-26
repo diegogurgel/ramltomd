@@ -1,5 +1,5 @@
 {
-  "name": "raml-converter",
+  "name": "ramltomd",
   "version": "0.0.1",
   "description": "raml to markdown",
   "main": "lib/converter.js",
