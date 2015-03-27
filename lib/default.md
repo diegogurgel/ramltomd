@@ -6,7 +6,7 @@
 {% for resource in resources %}
 ## {{resource.relativeUri}}
 
-{% for method in resources[0].methods %}
+{% for method in resource.methods %}
 #### {{ method.method }}: {{method.description}}
 {% for bodyKey,value in method.body%}
 Request type:{{bodyKey}}
@@ -14,16 +14,39 @@ Request type:{{bodyKey}}
 {{method.body[bodyKey].schema}}
 ```
 {% endfor %}
-##### Respostas
+###### Response(s)
 
 {% for httpCode,value in method.responses %}
 {{httpCode}}
 {% for bodyKey,value in method.responses[httpCode].body%}
-Response type:{{bodyKey}}
+type:{{bodyKey}}
 ``` 
 {{method.responses[httpCode].body[bodyKey].schema}}
 ``` 
 {% endfor %}
 {% endfor %}
 {% endfor %}
+
+{% for resource in resource.resources%}
+###{{resource.relativeUri}}
+{% for method in resource.methods %}
+#### {{ method.method }}: {{method.description}}
+
+###### Response(s)
+{% for responsesKey,value in method.responses %}
+{{responsesKey}}
+{% for bodyKeyResp,value in method.responses[responsesKey].body%}
+type: {{bodyKeyResp}}
+
+``` 
+{{method.responses[responsesKey].body[bodyKeyResp].schema}}
+```
 {% endfor %}
+{% endfor %}
+
+{% endfor %}
+
+{% endfor %}
+
+{% endfor %}
+
