@@ -1,14 +1,11 @@
 #Raml to Markdown
----
+
 A RAML to markdown converter made in modejs
 
 ###Install
 ```sh
 $ npm install -g ralmtomd
 ```
-
-
-
 
 ###Usage
 ####Comand line
@@ -30,8 +27,6 @@ $ ramltomd -i path/to/filename.raml > path/to/output.md
 
 ```javascript
 var ramlToMd = require('ramltomd');
-
-
 ramlToMd.render(path).then(function(result){
 	
 });
