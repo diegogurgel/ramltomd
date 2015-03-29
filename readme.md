@@ -1,4 +1,4 @@
-#Raml to Markdown
+# Raml to Markdown
 
 A RAML to markdown converter made in modejs
 
@@ -7,13 +7,13 @@ A RAML to markdown converter made in modejs
 $ npm install -g ralmtomd
 ```
 
-###Usage
-####Comand line
+### Usage
+#### Comand line
 
 ```sh
 $ ramltomd -i path/to/filename.raml > path/to/output.md
 ```
-#####Help
+##### Help
 
 ```
  Usage: ramltomd [options]
@@ -23,7 +23,7 @@ $ ramltomd -i path/to/filename.raml > path/to/output.md
     -V, --version       output the version number
     -i, --input [path]  path for raml file
 ```
-####As a library
+#### As a library
 
 ```javascript
 var ramlToMd = require('ramltomd');
