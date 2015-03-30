@@ -1,11 +1,8 @@
 # {{title}} API documentation{%if version%} version {{version}}{%endif%}
 {{baseUri}}
-
 ---
-
 {% for resource in resources %}
 ## {{resource.relativeUri}}
-
 {% for method in resource.methods %}
 #### {{ method.method }}: {{method.description}}
 {% for bodyKey,value in method.body%}
@@ -15,7 +12,6 @@ Request type:{{bodyKey}}
 ```
 {% endfor %}
 ###### Response(s)
-
 {% for httpCode,value in method.responses %}
 {{httpCode}}
 {% for bodyKey,value in method.responses[httpCode].body%}
@@ -26,12 +22,10 @@ type:{{bodyKey}}
 {% endfor %}
 {% endfor %}
 {% endfor %}
-
 {% for resource in resource.resources%}
 ###{{resource.relativeUri}}
 {% for method in resource.methods %}
 #### {{ method.method }}: {{method.description}}
-
 ###### Response(s)
 {% for responsesKey,value in method.responses %}
 {{responsesKey}}
@@ -43,10 +37,6 @@ type: {{bodyKeyResp}}
 ```
 {% endfor %}
 {% endfor %}
-
 {% endfor %}
-
 {% endfor %}
-
 {% endfor %}
-
