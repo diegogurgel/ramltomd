@@ -2,9 +2,9 @@
 
 A RAML to markdown converter made in modejs
 
-###Install
+### Install
 ```sh
-$ npm install -g ralmtomd
+$ npm install -g ramltomd
 ```
 
 ### Usage
