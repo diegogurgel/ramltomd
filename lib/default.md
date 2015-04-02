@@ -5,6 +5,13 @@
 ## {{resource.relativeUri}}
 {% for method in resource.methods %}
 #### {{ method.method }}: {{method.description}}
+{% if method.queryParameters %}
+##### Parameters
+| Parameter     | Description   | Type |
+| ------------- | ------------- | ---- |
+{% for parameter,objParameter in method.queryParameters%}| {{parameter}} | {{objParameter.description}} | {{objParameter.type}} |
+{% endfor %}
+{% endif %}
 {% for bodyKey,value in method.body%}
 Request type:{{bodyKey}}
 ``` 
