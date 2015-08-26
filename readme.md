@@ -1,6 +1,6 @@
 # Raml to Markdown
 
-A RAML to markdown converter made in modejs
+A RAML to markdown converter made in nodejs
 
 ### Install
 ```sh
