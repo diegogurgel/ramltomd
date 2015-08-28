@@ -9,9 +9,10 @@
   "author": "Diego Gurgel",
   "license": "ISC",
   "dependencies": {
+    "commander": "^2.7.1",
     "nunjucks": "^1.2.0",
-    "raml2obj": "^2.0.0",
-    "commander": "^2.7.1"
+    "q": "^1.4.1",
+    "raml2obj": "^2.0.0"
   },
   "bin": {
     "ramltomd": "lib/ramltomd.js"
