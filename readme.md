@@ -1,4 +1,4 @@
-# Raml to Markdown
+# RAML to Markdown
 
 A RAML to markdown converter made in nodejs
 
